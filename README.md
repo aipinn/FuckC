@@ -1,0 +1,2 @@
+# FuckC
+Data structure
