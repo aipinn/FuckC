@@ -10,6 +10,7 @@
 #include <stdlib.h>
 #include "list.h"
 #include "SequenceList.h"
+#include "Link.h"
 
 #define OK    1
 #define ERROR 0
@@ -60,11 +61,29 @@ void Cacsar(DuLinkList *L, int i) {
 }
 
 
-int main(int argc, const char * argv[]) {
-    
-    int num = add(10, 20);
-    printf("%d\n", num);
-    
+//链表
+
+void testLink(void) {
+//    link *l = initLink();
+//    display(l, false);
+    link *l = initLinkWithHeader();
+    display(l, true);
+//    printf("---insert element--\n");
+//    insertLink(l, 0, 1);
+//    display(l, true);
+//    printf("---delete element--\n");
+    deleteLink(l, 3);
+    display(l, true);
+    printf("---select element--\n");
+    int idx = selectLink(l, 3);
+    printf("元素的位置:%d\n",idx);
+//    printf("---update element--\n");
+//    updateLink(l, -2, 2);
+//    display(l, true);
+
+}
+
+void oneDualDirectionLink(void){
     DuLinkList L;
     int n;
     InitList(&L);
@@ -75,16 +94,43 @@ int main(int argc, const char * argv[]) {
         L = L->next;
         printf("%c", L->data);
     }
-    printf("\n");
+}
+
+//顺序表
+void testSeqList(void){
+    printf("\n---init--\n");
     seqTable table = initTable();
     for (int i = 0; i < SeqTableSize; i++) {
         table.head[i] = i;
         table.length++;
     }
     displayTable(table);
-    printf("--add---\n");
-    seqTable new = addTable(table, 9, 2);
-    displayTable(new);
-    printf("table:%p\nnew:%p", table.head, new.head);
+    
+    printf("--add--\n");
+    addTable(table, 9, 0);
+    displayTable(table);
+    
+    printf("--delete--\n");
+    int loc;
+    printf("请输入要删除的元素的位置:");
+    scanf("%d", &loc);
+    deleteTable(table, loc);
+    displayTable(table);
+    printf("---select---\n");
+    int idx = selectTable(table, 9);
+    printf("%d\n",idx);
+    printf("---update--\n");
+    updataTable(table, 3, 30);
+    displayTable(table);
+    
+}
+
+
+int main(int argc, const char * argv[]) {
+    
+    testLink();
+    
     return 0;
 }
+
+

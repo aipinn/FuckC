@@ -32,22 +32,22 @@ void displayTable(seqTable t) {
     }
 }
 
-//在顺序表中插入元素
+// 在顺序表中插入元素
 seqTable addTable(seqTable t, int element, int location) {
     //合法性判断
-    if (location > t.length+1 || location < 1) {
-        printf("插入位置有误");
+    if (location > t.length+1 || location < 0) {
+        printf("插入位置有误\n");
+        return t;
     }
     //分配内存
     if (t.size == t.length) {
         t.head = (int *)realloc(t.head, (t.size+1)*sizeof(int));
         if(!t.head) {
-            printf("分配内存错误");
+            printf("分配内存错误\n");
             return t;
         }
-        t.size++;
+        t.size+=1;
     }
-    printf("目前表的长度:%d\n", t.size);
     //移动插入位置之后的元素
     //注意:后移的顺序必须是倒序
     for (int i = t.size; i > location; i--) {
@@ -56,5 +56,36 @@ seqTable addTable(seqTable t, int element, int location) {
     //插入元素
     t.head[location] = element;
     t.length++;
+    return t;
+}
+
+
+// 顺序表删除元素
+seqTable deleteTable(seqTable t, int location) {
+    if (location < 0 || location > t.length + 1) {
+        printf("删除的位置有误:%d\n", location);
+        return t;
+    }
+    
+    for (int i = location; i < t.length; i++) {
+        t.head[i] = t.head[i+1];
+    }
+    t.length --;
+    return t;
+}
+// 查找元素
+int selectTable(seqTable t, int element) {
+    
+    for (int i = 0; i < t.length; i++) {
+        if (element == t.head[i]) {
+            return i;
+        }
+    }
+    return -1;
+}
+
+seqTable updataTable(seqTable t,int oldEle ,int newEle) {
+    int idx = selectTable(t, oldEle);
+    t.head[idx] = newEle;
     return t;
 }

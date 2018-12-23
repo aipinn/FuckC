@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BC404B2A21CBEE5C000D57AF /* SequenceList.c in Sources */ = {isa = PBXBuildFile; fileRef = BC404B2921CBEE5C000D57AF /* SequenceList.c */; };
+		BCB5019521CFB68700DA28D6 /* Link.c in Sources */ = {isa = PBXBuildFile; fileRef = BCB5019421CFB68700DA28D6 /* Link.c */; };
 		BCD325BB21AEE9D5002CC556 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = BCD325BA21AEE9D5002CC556 /* main.c */; };
 		BCD325C321AEEA90002CC556 /* list.c in Sources */ = {isa = PBXBuildFile; fileRef = BCD325C221AEEA90002CC556 /* list.c */; };
 /* End PBXBuildFile section */
@@ -27,6 +28,8 @@
 /* Begin PBXFileReference section */
 		BC404B2821CBEE5C000D57AF /* SequenceList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SequenceList.h; sourceTree = "<group>"; };
 		BC404B2921CBEE5C000D57AF /* SequenceList.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = SequenceList.c; sourceTree = "<group>"; };
+		BCB5019321CFB68700DA28D6 /* Link.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Link.h; sourceTree = "<group>"; };
+		BCB5019421CFB68700DA28D6 /* Link.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = Link.c; sourceTree = "<group>"; };
 		BCD325B721AEE9D5002CC556 /* FuckC */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = FuckC; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCD325BA21AEE9D5002CC556 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		BCD325C121AEEA90002CC556 /* list.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = list.h; sourceTree = "<group>"; };
@@ -68,6 +71,8 @@
 				BCD325C221AEEA90002CC556 /* list.c */,
 				BC404B2821CBEE5C000D57AF /* SequenceList.h */,
 				BC404B2921CBEE5C000D57AF /* SequenceList.c */,
+				BCB5019321CFB68700DA28D6 /* Link.h */,
+				BCB5019421CFB68700DA28D6 /* Link.c */,
 			);
 			path = FuckC;
 			sourceTree = "<group>";
@@ -129,6 +134,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC404B2A21CBEE5C000D57AF /* SequenceList.c in Sources */,
+				BCB5019521CFB68700DA28D6 /* Link.c in Sources */,
 				BCD325BB21AEE9D5002CC556 /* main.c in Sources */,
 				BCD325C321AEEA90002CC556 /* list.c in Sources */,
 			);
