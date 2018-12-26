@@ -11,6 +11,7 @@
 #include "list.h"
 #include "SequenceList.h"
 #include "Link.h"
+#include "StaticLink.h"
 
 #define OK    1
 #define ERROR 0
@@ -62,7 +63,13 @@ void Cacsar(DuLinkList *L, int i) {
 
 
 //链表
-
+void testStaticLink(void) {
+    component array[maxSize];
+    int body = initArr(array);
+    printf("静态链表为:\n");
+    displayArr(array, body);
+    
+}
 void testLink(void) {
 //    link *l = initLink();
 //    display(l, false);
@@ -128,7 +135,7 @@ void testSeqList(void){
 
 int main(int argc, const char * argv[]) {
     
-    testLink();
+    testStaticLink();
     
     return 0;
 }
