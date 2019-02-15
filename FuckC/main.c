@@ -133,9 +133,52 @@ void testSeqList(void){
 }
 
 
+typedef struct ListNode {
+    int val;
+    struct ListNode *next;
+}LNode;
+
+LNode *ceateNode(){
+    //头指针
+    LNode *h = NULL;
+    
+    //首元结点
+    //tmp作为移动指针
+    LNode *tmp = (LNode *)malloc(sizeof(LNode));
+    tmp->val = 1;
+    tmp->next = NULL;
+    //头指针指向首元结点
+    h = tmp;
+    
+    for (int i = 2; i<=5; i++) {
+        LNode *new = (LNode *)malloc(sizeof(LNode));
+        new->val = i;
+        new->next = NULL;
+        //指向新建的节点
+        tmp->next = new;
+        //移动指针指向新建的节点
+        tmp = tmp->next;//也就是tmp = new也可以
+    }
+    return h;
+}
+//链表反转测试
+void testReversedList(){
+    //多个节点
+    link *p = initLink();
+    display(p, 0);
+    link *rp = reversed_list(p);
+    display(rp, 0);
+    //没有节点
+    display(reversed_list(NULL), 0);
+    //一个节点
+    link *node = malloc(sizeof(link));
+    node->elem = 1;
+    node->next = NULL;
+    display(reversed_list(node), 0);
+}
 int main(int argc, const char * argv[]) {
     
-    testStaticLink();
+    testReversedList();
     
     return 0;
 }

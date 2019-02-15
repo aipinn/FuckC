@@ -141,3 +141,25 @@ link *updateLink(link *p, int newEle, int oldEle) {
     tmp->next->elem = newEle;
     return p;
 }
+
+//反转链表
+link *reversed_list(link *head) {
+    
+    //临时节点
+    link *pReversedHead = NULL;
+    link *pNode = head;
+    link *pPrev = NULL;
+    //顺序遍历链表
+    while (pNode != NULL) {
+        link *pNext = pNode->next;
+        if (pNext == NULL) {
+            pReversedHead = pNode;
+        }
+        pNode->next = pPrev;
+        
+        pPrev = pNode;
+        pNode = pNext;
+    }
+    
+    return pReversedHead;
+}

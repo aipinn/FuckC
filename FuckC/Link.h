@@ -48,6 +48,7 @@ int selectLink(link *p, int element);
  链表更新元素
  */
 link *updateLink(link *p, int newEle, int oldEle);
-
+//反转链表
+link *reversed_list(link *head);
 
 #endif /* Link_h */
